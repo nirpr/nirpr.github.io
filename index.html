@@ -111,7 +111,6 @@
             background: #ff6666;
         }
     </style>
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
     <div class="container">
@@ -180,21 +179,19 @@
         }
 
         async function fetchReadme(repoName) {
-    try {
-        const response = await fetch(`https://api.github.com/repos/nirpr/${repoName}/readme`, {
-            headers: { Accept: 'application/vnd.github.v3.raw' }
-        });
-        if (!response.ok) throw new Error('README not found');
-        const readmeContent = await response.text(); // Fetch raw content
-        const renderedHTML = marked(readmeContent); // Convert to HTML
-        document.getElementById('readmeContent').innerHTML = renderedHTML; // Insert into modal
-        document.getElementById('readmeModal').style.display = 'block'; // Show modal
-    } catch (error) {
-        document.getElementById('readmeContent').innerHTML = `<p>Error loading README: ${error.message}</p>`;
-        document.getElementById('readmeModal').style.display = 'block';
-    }
-}
-
+            try {
+                const response = await fetch(`https://api.github.com/repos/nirpr/${repoName}/readme`, {
+                    headers: { Accept: 'application/vnd.github.v3.raw' }
+                });
+                if (!response.ok) throw new Error('README not found');
+                const readmeContent = await response.text();
+                document.getElementById('readmeContent').innerHTML = `<pre style="white-space: pre-wrap;">${readmeContent}</pre>`;
+                document.getElementById('readmeModal').style.display = 'block';
+            } catch (error) {
+                document.getElementById('readmeContent').innerHTML = `<p>Error loading README: ${error.message}</p>`;
+                document.getElementById('readmeModal').style.display = 'block';
+            }
+        }
 
         function closeModal() {
             document.getElementById('readmeModal').style.display = 'none';
