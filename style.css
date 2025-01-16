@@ -1,0 +1,105 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    background-color: #1a1a1a;
+}
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: #2d2d2d;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+h1 {
+    color: #ffffff;
+    text-align: center;
+}
+h1 a {
+    color: #1a75ff;
+    font-size: 16px;
+    text-decoration: none;
+    margin-left: 10px;
+}
+h1 a:hover {
+    text-decoration: underline;
+}
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+.project-card {
+    border: 1px solid #404040;
+    background-color: #363636;
+    padding: 15px;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+.project-card h3 {
+    margin-top: 0;
+    color: #1a75ff;
+}
+.project-card p {
+    color: #cccccc;
+}
+.project-card a {
+    color: #1a75ff;
+    text-decoration: none;
+}
+.project-card a:hover {
+    text-decoration: underline;
+    color: #4d94ff;
+}
+.project-card button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #1a75ff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.project-card button:hover {
+    background-color: #4d94ff;
+}
+#readmeModal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    overflow: auto;
+    z-index: 1000;
+    padding: 20px;
+}
+#readmeModal > div {
+    background: #2d2d2d;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 800px;
+    margin: 50px auto;
+}
+#readmeModal button {
+    background: #ff4d4d;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    float: right;
+}
+#readmeModal button:hover {
+    background: #ff6666;
+}
