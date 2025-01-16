@@ -1,3 +1,4 @@
+
 async function fetchGitHubProjects() {
     try {
         const username = 'nirpr';
@@ -21,7 +22,7 @@ async function fetchGitHubProjects() {
                 return allowedProjects.indexOf(a.name) - allowedProjects.indexOf(b.name);
             });
 
-        projectsContainer.innerHTML = ''; // Clear existing projects first
+        projectsContainer.innerHTML = '';
 
         filteredProjects.forEach(project => {
             const projectCard = document.createElement('div');
@@ -49,7 +50,21 @@ async function fetchReadme(repoName) {
         });
         if (!response.ok) throw new Error('README not found');
         const readmeContent = await response.text();
-        document.getElementById('readmeContent').innerHTML = `<pre style="white-space: pre-wrap;">${readmeContent}</pre>`;
+        
+        // Convert markdown to HTML using marked
+        const htmlContent = marked.parse(readmeContent, {
+            breaks: true,
+            gfm: true
+        });
+
+        // Add some basic styling for the README content
+        const styledContent = `
+            <div style="color: #fff; line-height: 1.6;">
+                ${htmlContent}
+            </div>
+        `;
+
+        document.getElementById('readmeContent').innerHTML = styledContent;
         document.getElementById('readmeModal').style.display = 'block';
     } catch (error) {
         document.getElementById('readmeContent').innerHTML = `<p>Error loading README: ${error.message}</p>`;
