@@ -8,8 +8,8 @@ async function fetchGitHubProjects() {
         const projectsContainer = document.getElementById('projects');
         
         const allowedProjects = [
-            'Linux-FlightsAPI',
             'ML-Myocardial_Infarction',
+            'Linux-FlightsAPI',
             'Collaborative-Playlist-Manager',
             'Memory_game',
             'Amazon_reviews_classifier',

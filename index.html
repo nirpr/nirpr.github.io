@@ -3,17 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My GitHub Portfolio</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <title>Nir Peretz</title>
     <!-- Link the CSS file -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>
-            Welcome to My GitHub Portfolio
-            <a href="https://github.com/nirpr" target="_blank">(View Profile)</a>
-        </h1>
-        <h2 style="text-align: center; color: #cccccc; font-weight: normal;">Created by Nir Peretz</h2>
+        <h1>Welcome to My Portfolio</h1>
+        <!-- About Me Section -->
+        <section id="about-me">
+            <h3>Hi, I'm Nir</h3>
+            <p>A software engineer who tackles complex technical challenges by quickly mastering new tools. Passionate about machine learning, with a focus on medical data, I also specialize in backend development, where I enjoy understanding and implementing the underlying logic of systems.</p>
+            <p>🏀 Fun fact: I play basketball for Maccabi Ra’anana in the fourth league, and we’re currently tied for first place! 🏀</p>
+        </section>
+
         <div class="projects" id="projects">
             <!-- Projects will be dynamically loaded here -->
         </div>
@@ -26,14 +33,25 @@
         </div>
     </div>
 
+    <h2 style="text-align: center; color: #cccccc; font-weight: normal;">Created by Nir Peretz</h2>
     <footer>
         <p>Contact Me:</p>
-        <ul>
-            <li><span>Email</span> <a href="mailto:nirperetz35@gmail.com">nirperetz35@gmail.com</a></li>
-            <li><span>Phone</span> 052-8560977</li>
-            <li><span>LinkedIn</span> <a href="https://linkedin.com/in/nirperetz" target="_blank">linkedin.com/in/nirperetz</a></li>
-        </ul>
-    </footer>      
+        <div class="contact-logos">
+            <a href="mailto:nirperetz35@gmail.com" title="Email Me" target="_blank">
+                <img src="https://img.icons8.com/ios-filled/50/000000/email.png" alt="Email Icon">
+            </a>
+            <a href="tel:0528560977" title="Call Me">
+                <img src="https://img.icons8.com/ios-filled/50/000000/phone.png" alt="Phone Icon">
+            </a>
+            <a href="https://www.linkedin.com/in/nirperetz-profile/" title="LinkedIn Profile" target="_blank">
+                <img src="https://img.icons8.com/ios-filled/50/0077b5/linkedin.png" alt="LinkedIn Icon">
+            </a>
+            <a href="https://github.com/nirpr" title="GitHub Profile" target="_blank">
+                <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Icon">
+            </a>
+        </div>
+    </footer>
+        
 
     <script src="script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/4.2.12/marked.min.js"></script>
