@@ -27,9 +27,14 @@ async function fetchGitHubProjects() {
         filteredProjects.forEach(project => {
             const projectCard = document.createElement('div');
             projectCard.className = 'project-card';
+
+            // Parse the project name
+            const parsedProjectName = project.name
+                .replace(/_/g, ' ') // Replace underscores with spaces
+                .replace(/-/g, ' '); // Replace hyphens with spaces
             
             projectCard.innerHTML = `
-                <h3>${project.name}</h3>
+                <h3>${parsedProjectName}</h3>
                 <p>${project.description || 'No description available'}</p>
                 <p>Language: ${project.language || 'Not specified'}</p>
                 <a href="${project.html_url}" target="_blank">View on GitHub</a>
