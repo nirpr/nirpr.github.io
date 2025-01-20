@@ -40,12 +40,17 @@ async function fetchGitHubProjects() {
                 .replace(/-/g, ' '); // Replace hyphens with spaces
         
             projectCard.innerHTML = `
-                <h3>${parsedProjectName}</h3>
-                <p>${project.description || 'No description available'}</p>
-                <p>Language: ${project.language || 'Not specified'}</p>
-                <a href="${project.html_url}" target="_blank" rel="noopener noreferrer">View on GitHub</a>
-                <a href="${project.html_url}" target="_blank">View on GitHub</a>
+                <div class="project-card-content">
+                    <h3>${parsedProjectName}</h3>
+                    <p>${project.description || 'No description available'}</p>
+                    <p>Language: ${project.language || 'Not specified'}</p>
+                </div>
+                <div class="button-container">
+                    <a href="javascript:void(0)" onclick="fetchReadme('${project.name}')">View README</a>
+                    <a href="${project.html_url}" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+                </div>
             `;
+            
             
             projectsContainer.appendChild(projectCard);
         });
