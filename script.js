@@ -27,22 +27,29 @@ async function fetchGitHubProjects() {
         filteredProjects.forEach(project => {
             const projectCard = document.createElement('div');
             projectCard.className = 'project-card';
-
-            // Parse the project name
+        
+            // Example: Set a background image based on the project name
+            const backgroundImage = `url('images/${project.name}.png')`;
+        
+            // Apply the background image as an inline style
+            projectCard.style.backgroundImage = backgroundImage;
+        
+            // Parse the project name for display
             const parsedProjectName = project.name
                 .replace(/_/g, ' ') // Replace underscores with spaces
                 .replace(/-/g, ' '); // Replace hyphens with spaces
-            
+        
             projectCard.innerHTML = `
                 <h3>${parsedProjectName}</h3>
                 <p>${project.description || 'No description available'}</p>
                 <p>Language: ${project.language || 'Not specified'}</p>
+                <a href="${project.html_url}" target="_blank" rel="noopener noreferrer">View on GitHub</a>
                 <a href="${project.html_url}" target="_blank">View on GitHub</a>
-                <button onclick="fetchReadme('${project.name}')">View README</button>
             `;
             
             projectsContainer.appendChild(projectCard);
         });
+        
     } catch (error) {
         console.error('Error fetching GitHub projects:', error);
     }
