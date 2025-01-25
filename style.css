@@ -31,6 +31,7 @@ h1 a:hover {
     text-align: left; /* Center the title */
     color: #ffbb33; /* Make the title color white */
     margin-bottom: 15px; /* Add some space below the title */
+    font-size: 2em
 }
 
 /* Style for the About Me text (no changes to alignment) */
