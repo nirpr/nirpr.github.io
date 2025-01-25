@@ -47,6 +47,33 @@ h1 a:hover {
     margin-top: 20px; /* Add some spacing above */
 }
 
+#tech-stack {
+    text-align: left;
+    margin: 40px 0;
+}
+
+#tech-stack h3 {
+    color: #ffbb33; /* Matches the styling of your about-me section */
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+.badge-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.badge-container img {
+    height: 30px;
+    transition: transform 0.3s ease;
+}
+
+.badge-container img:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
+}
+
 .projects {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
