@@ -10,8 +10,8 @@ async function fetchGitHubProjects() {
         const allowedProjects = [
             'ML-Myocardial_Infarction',
             'Linux-FlightsAPI',
+            'jamoveo',
             'Collaborative-Playlist-Manager',
-            'Memory_game',
             'Amazon_reviews_classifier',
             'cloze_completion'
         ];
